@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #my_app
-    'learning_log'
+    # my_app
+    'learning_log',
+    'users',
+    # oder_app
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +123,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+LOGIN_REDIRECT_URL ='/topics/'
+LOGIN_URL ='/users/login/'
+
+#setting for django-bootstrap3
+BOOTSTRAP ={
+    'include_jquery': True,
+}
+

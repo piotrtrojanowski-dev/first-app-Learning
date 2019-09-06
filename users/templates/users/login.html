@@ -1,0 +1,20 @@
+{% extends "learning_logs/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>Zaloguj się do konta</h2>
+{% endblock header %}
+
+
+{% block content %}
+  <p>Dodaj nowy temat:</p>
+  <form action="{% url 'login' %}" method ='post' class="form">
+      {% csrf_token %}
+      {%bootstrap_form form %}
+      
+      {% buttons %}
+      <button name="submit" class="btn btn-primary">Zaloguj</button>
+      {% endbuttons %}
+  </form>
+
+{% endblock content %}

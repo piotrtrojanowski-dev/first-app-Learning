@@ -1,0 +1,30 @@
+{% extends "learning_log/base.html" %}
+{% load bootstrap3 %}s
+
+{% block header %}
+  <h2>Topics</h2>
+{% endblock header %}
+
+{% block content %}
+
+
+  <Ul>
+      {% for topic in topics %}
+        <li>
+          <h3>
+            <a href="{% url 'topic' pk=topic.pk %}">{{topic}}</a>
+          </h3>
+        </li>
+      {% empty %}
+        <li>No topic has been added.</li>
+      {% endfor %}
+  </Ul>
+  <h3>
+     
+    <button>
+    <a href="{% url 'new_topic' %}">Add a new topic</a>
+    </button>
+      
+  </h3>
+
+{% endblock content %}
